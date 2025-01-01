@@ -463,7 +463,7 @@ NAME="mct"
 VERSION_ID="{version}"
 VERSION="{version} ({build_config['release_train']})"
 VERSION_CODENAME={build_defaults['debian_distribution']}
-ID=vyos
+ID=mct
 BUILD_ID="{build_git}"
 HOME_URL="{build_defaults['website_url']}"
 SUPPORT_URL="{build_defaults['support_url']}"
@@ -617,9 +617,9 @@ DOCUMENTATION_URL="{build_config['documentation_url']}"
                 --distribution {{debian_distribution}} \
                 --firmware-binary false \
                 --firmware-chroot false \
-                --iso-application "VyOS" \
+                --iso-application "mct" \
                 --iso-publisher "{{build_by}}" \
-                --iso-volume "VyOS" \
+                --iso-volume "mct" \
                 --linux-flavours {{kernel_flavor}} \
                 --linux-packages linux-image-{{kernel_version}} \
                 --mirror-binary {{debian_mirror}} \
