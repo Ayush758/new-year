@@ -458,8 +458,8 @@ if __name__ == "__main__":
 
         # Multi line strings needs to be un-indented to not have leading
         # whitespaces in the resulting file
-        os_release = f"""PRETTY_NAME="VyOS {version} ({build_config['release_train']})"
-NAME="VyOS"
+        os_release = f"""PRETTY_NAME="mct {version} ({build_config['release_train']})"
+NAME="mct"
 VERSION_ID="{version}"
 VERSION="{version} ({build_config['release_train']})"
 VERSION_CODENAME={build_defaults['debian_distribution']}
@@ -504,7 +504,7 @@ DOCUMENTATION_URL="{build_config['documentation_url']}"
         iter(os.remove, artifacts)
 
         ## Create the target ISO file path
-        iso_file = f"vyos-{version_data['version']}-{build_config['build_flavor']}-{build_config['architecture']}.iso"
+        iso_file = f"mct-{version_data['version']}-{build_config['build_flavor']}-{build_config['architecture']}.iso"
 
         ## Create live-build configuration files
 
@@ -607,7 +607,7 @@ DOCUMENTATION_URL="{build_config['documentation_url']}"
                 --archive-areas {{debian_archive_areas}} \
                 --backports true \
                 --binary-image iso-hybrid \
-                --bootappend-live "boot=live components hostname=vyos username=live nopersistence noautologin nonetworking union=overlay console=ttyS0,115200 console=tty0 net.ifnames=0 biosdevname=0" \
+                --bootappend-live "boot=live components hostname=mct username=mct nopersistence noautologin nonetworking union=overlay console=ttyS0,115200 console=tty0 net.ifnames=0 biosdevname=0" \
                 --bootappend-live-failsafe "live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal console=ttyS0,115200 console=tty0 net.ifnames=0 biosdevname=0" \
                 --bootloaders {{bootloaders}} \
                 --checksums 'sha256 md5' \
